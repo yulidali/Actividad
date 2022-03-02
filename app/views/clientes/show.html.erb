@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @cliente %>
+
+<div>
+  <%= link_to "Edit this cliente", edit_cliente_path(@cliente) %> |
+  <%= link_to "Back to clientes", clientes_path %>
+
+  <%= button_to "Destroy this cliente", @cliente, method: :delete %>
+</div>
+<h2>Proyectos</h2>
+
+<% if @cliente.proyectos.any? %>
+	<ul>
+		<% @cliente.proyectos.each do |proyect| %>
+		<li><%= link_to proyect, proyect %></li> 
+		<% end %>
+	</ul>
+<% else %>
+	<p>No hay Proyectos</p>
+<% end %>

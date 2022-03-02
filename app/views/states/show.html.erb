@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @state %>
+
+<div>
+  <%= link_to "Edit this state", edit_state_path(@state) %> |
+  <%= link_to "Back to states", states_path %>
+
+  <%= button_to "Destroy this state", @state, method: :delete %>
+</div>
+
+<h2>Ciudades</h2>
+
+<% if @state.cities.any? %>
+	<ul>
+		<% @state.cities.each do |cit| %>
+		<li><%= link_to cit, cit %></li> 
+		<% end %>
+	</ul>
+<% else %>
+	<p>No hay ciudades</p>
+<% end %>

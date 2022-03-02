@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @city %>
+
+<div>
+  <%= link_to "Edit this city", edit_city_path(@city) %> |
+  <%= link_to "Back to cities", cities_path %>
+
+  <%= button_to "Destroy this city", @city, method: :delete %>
+</div>
+<h2>Empresa</h2>
+
+<% if @city.empresas.any? %>
+	<ul>
+		<% @city.empresas.each do |empre| %>
+		<li><%= link_to empre, empre %></li> 
+		<% end %>
+	</ul>
+<% else %>
+	<p>No hay Empresas</p>
+<% end %>

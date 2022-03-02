@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @estatus %>
+
+<div>
+  <%= link_to "Edit this estatus", edit_estatus_path(@estatus) %> |
+  <%= link_to "Back to estatuses", estatuses_path %>
+
+  <%= button_to "Destroy this estatus", @estatus, method: :delete %>
+</div>
+<h2>Proyectos</h2>
+
+<% if @estatus.proyectos.any? %>
+	<ul>
+		<% @estatus.proyectos.each do |proyect| %>
+		<li><%= link_to proyect, proyect %></li>
+		<% end %>
+	</ul>
+<% else %>
+	<p>No hay Proyectos</p>
+<% end %>
